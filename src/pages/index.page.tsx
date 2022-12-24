@@ -1,5 +1,5 @@
-import { Heading } from "@ignite-ui/react";
-import Head from "next/head";
+import { Heading } from '@ignite-ui/react'
+import Head from 'next/head'
 
 export default function Home() {
   return (
@@ -12,5 +12,5 @@ export default function Home() {
       </Head>
       <Heading as="h1">Hello World</Heading>
     </>
-  );
+  )
 }
