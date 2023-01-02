@@ -7,6 +7,7 @@ import { z } from 'zod'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import { api } from '../../lib/axios'
+import axios from 'axios'
 
 const registerFormSchema = z.object({
   username: z
@@ -50,6 +51,11 @@ export default function Register() {
         name,
       })
     } catch (error) {
+      if (axios.isAxiosError(error)) {
+        alert(error.response?.data.message)
+        return
+      }
+
       console.error(error)
     }
   }
