@@ -5,7 +5,7 @@ import { ArrowRight, Check } from 'phosphor-react'
 import { Container, Header } from '../styles'
 import { AuthError, ConnectBox, ConnectItem } from './styles'
 
-export default function Register() {
+export default function ConnectCalendar() {
   const session = useSession()
 
   const router = useRouter()
@@ -54,7 +54,11 @@ export default function Register() {
             </AuthError>
           )}
 
-          <Button type="submit" disabled={!isSignedIn}>
+          <Button
+            type="submit"
+            onClick={() => router.push('/register/time-intervals')}
+            disabled={!isSignedIn}
+          >
             Próximo passo
             <ArrowRight />
           </Button>
